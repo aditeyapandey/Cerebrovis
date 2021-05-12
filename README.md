@@ -1,3 +1,4 @@
+
 # Cerebrovis
 
 CerebroVis is a novel visualization design to represent the human cerebrovascular system. This repository, stores the source code of the tool and 60 sample brain scans visualized with CerebroVis.
@@ -41,6 +42,8 @@ Click on any artery in the CerebroVis View to see the higlighted artery in the b
 <img width="1741" alt="Screen Shot 2021-05-12 at 2 29 51 PM" src="https://user-images.githubusercontent.com/8208255/118026159-84a1dd00-b32e-11eb-896b-308e27d4aeaf.png">
 
 Blood flow view shows uses a simulated dataset to show the volume of blood flow in the artery.
+
+<img width="1764" alt="Screen Shot 2021-05-12 at 2 43 59 PM" src="https://user-images.githubusercontent.com/8208255/118027946-7d7bce80-b330-11eb-956e-fb1afcbd6a47.png">
 
 
 ## Contributing
