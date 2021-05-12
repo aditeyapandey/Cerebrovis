@@ -2,6 +2,12 @@
 
 CerebroVis is a novel visualization design to represent the human cerebrovascular system. This repository, stores the source code of the tool and 60 sample brain scans visualized with CerebroVis.
 
+The homepage of the project is here: https://aditeyapandey.github.io/Cerebrovis/
+
+To directly view a sample visualization: https://aditeyapandey.github.io/Cerebrovis/visualization.html?name=BG0003_ColorCoded
+
+To view all 60 brain scans: https://aditeyapandey.github.io/Cerebrovis/listfiles.html
+
 ## Getting Started
 
 CerebroVis is a web application developed using HTML, CSS, Javascript and d3.js. You can follow these steps to run CerebroVis on your local machine.
