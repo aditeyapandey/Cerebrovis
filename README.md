@@ -36,10 +36,11 @@ The default view of CerebroVis shows the novel visualization and a 2D project of
 
 <img width="1752" alt="Screen Shot 2021-05-12 at 2 28 34 PM" src="https://user-images.githubusercontent.com/8208255/118025995-56240200-b32e-11eb-9772-e758dcfe4e97.png">
 
-Click on any artery in the CerebroVis View to see the higlighted artery in the brain.
+Click on any artery in the CerebroVis View to see the higlighted artery in the brain. Double click on any artery to unhighlight the artery.
 
 <img width="1741" alt="Screen Shot 2021-05-12 at 2 29 51 PM" src="https://user-images.githubusercontent.com/8208255/118026159-84a1dd00-b32e-11eb-896b-308e27d4aeaf.png">
 
+Blood flow view shows uses a simulated dataset to show the volume of blood flow in the artery.
 
 
 ## Contributing
