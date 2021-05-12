@@ -1,0 +1,174 @@
+<html >
+<head>
+    <title>Stroke-Proof</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+    <!-- External Libraries -->
+    <!--<script src="http://d3js.org/d3.v3.min.js" type="text/javascript"></script>-->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.easypz.io/easypz.latest.min.js"></script>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+
+    <!-- Interal Libraries -->
+    <script>
+
+    </script>
+    <script src="js/firebase_server.js"></script>
+    <script src="js/metainformation.js"></script>
+    <script src="js/arteryLabels.js"></script>
+    <script src="js/brainvizlib.js"></script>
+    <script src="js/shark_viewer.js"></script>
+    <script src="js/d3.phylogram.js"></script>
+    <script src="js/viz.js"></script>
+    <script src="js/bloodFlowGeneration.js"></script>
+    <script src="js/orthographic_projection.js"></script>
+    <script src="js/honeyComb.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/toggle.js"></script>
+    <script src="js/BeizerCurve.js"></script>
+    <script src="js/circleofwillis.js"></script>
+    <script src="js/clustering.js"></script>
+    <script src="js/Annotate.js"></script>
+
+
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+    <link href="css/style.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div class="preload"><img src="http://i.imgur.com/KUJoe.gif">
+</div>
+
+<svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1"> <defs> <pattern id="diagonal-stripe-5" patternUnits="userSpaceOnUse" width="10" height="10"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSdibGFjaycvPgogIDxwYXRoIGQ9J00tMSwxIGwyLC0yCiAgICAgICAgICAgTTAsMTAgbDEwLC0xMAogICAgICAgICAgIE05LDExIGwyLC0yJyBzdHJva2U9J3doaXRlJyBzdHJva2Utd2lkdGg9JzInLz4KPC9zdmc+" x="0" y="0" width="10" height="10"> </image> </pattern> </defs> </svg>
+
+
+<div class="menubar" style="display:flex" >
+    <div class="left-panel">
+        <b> 2D Projection</b>
+    </div>
+    <div class="right-panel" >
+        <b>CerebroVis</b>
+        <span class="metaData" id="metaContainer">
+        <span id="metaInformationID">  </span>
+        <span id="metaInformationAge">  </span>
+        <span id="metaInformationSex">  </span>
+        </span>
+    <!--<div id="viewButtons" style="padding-left: 37.5%">-->
+        <!--<button type="button" id="normal" style="background: #337ab7;height: auto; padding: 2%;color: white;"  onclick="toggleView('normal')"><b>Original</b></button>-->
+        <!--<button type="button" id="symmetry" style="background: darkgrey;height: auto; padding: 2%;color: white;"  onclick="toggleView('symmetry')"><b>Symmetry</b></button>-->
+        <!--<button type="button" id="hybrid" style="background: darkgrey;height: auto; padding: 2%;color: white;"  onclick="toggleView('hybrid')"><b>Hybrid</b></button>-->
+
+    <!--</div>-->
+    </div>
+
+</div>
+
+
+<div class="dashboard" style="display: flex;"  >
+    <!--style="display: flex;color:black;height: 90%"-->
+
+    <div class="left-panel" style="width: 25%">
+
+        <div  id="brainmap" ></div>
+
+        <div id="brainviewbuttons" style="padding-left: 25%">
+        <button type="button" id="top" class="btn btn-primary" style="background: darkgrey"  onclick="toggleBrainView('top')"><b>Axial</b></button>
+        <button type="button" id="back" class="btn btn-primary" style="background: #337ab7" onclick="toggleBrainView('back')"><b>Coronal</b></button>
+        <button type="button" id="lateral" class="btn btn-primary" style="background: darkgrey"  onclick="toggleBrainView('lateral')"><b>Sagittal</b></button>
+        </div>
+
+
+        <div class="legend" >
+            <label class="switch">
+                <input type="checkbox" onchange="checkBoxChangeLegend()" checked>
+                <span class="slider round"></span>
+            </label>
+
+            <h2 style="text-align: center"> Default</h2>
+
+        <div id="dendrogramviewlegend" style="padding-top: 2%;font-weight: bold">
+        <span style="background-color:#01665e ;color: white;padding: 1%">Left-MCA</span>
+        <span style="background-color:#35978f ;color: white;padding: 1%">Left-ACA</span>
+        <span style="background-color:#80cdc1 ;color: white;padding: 1%">Left-PCA</span>
+            <br><br>
+        <span style="background-color:#dfc27d ;color: white;padding: 1%">Right-PCA</span>
+        <span style="background-color:#bf812d ;color: white;padding: 1%">Right-ACA</span>
+        <span style="background-color:#8c510a ;color: white;padding: 1%">Right-MCA</span>
+            <br><br>
+        </div>
+
+
+        <div id="dendrogramviewlegend1" style="padding-top: 2%;font-weight: bold">
+
+        <span style="background-color:#7570b3 ;color: white;padding: 1%">Internal Carotid Arteries</span> <br> <br>
+        <span style="background-color:#d95f02 ;color: white;padding: 1%">Basilar Artery</span> <br> <br>
+        <span style="background-color:#B22222 ;color: white;padding: 1%">Posterior Communicating Artery</span>
+        </div>
+
+        </div>
+
+        <div class="mips">
+
+            <label class="switch">
+                <input type="checkbox" onchange="mipsToggleCheckBox()">
+                <span class="slider round"></span>
+            </label>
+            <h2 style="text-align: center"> Radiology </h2>
+        </div>
+
+        <div class="bloodflow">
+
+            <label class="switch">
+                <input type="checkbox" onchange="checkBoxChange()">
+                <span class="slider round"></span>
+            </label>
+
+            <h2 style="text-align: center"> Blood Flow </h2>
+            <div class="bloodFlowLegend" style="display:none;padding-left: 10%;padding-top: 1%"> <b> LBV</b> <img src="images/OrRd.png" alt="Smiley face" style="height:20px;width: 50%"> <b>HBV</b>
+            </div>
+        </div>
+
+
+        <div class="annotate">
+
+            <label class="switch">
+                <input type="checkbox" onchange="checkBoxAnnotate()">
+                <span class="slider round"></span>
+            </label>
+
+            <h2 style="text-align: center"> Annotate </h2>
+            <div id="Filename" style="display:none;padding-left: 10%;padding-top: 1%">
+                <input id="provideFN"></input>
+                <button onclick="saveFile()" id="save"> Save</button>
+
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="right-panel" style="width: 75%">
+
+        <div  id="dendrogram"></div>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+</body>
+</html>

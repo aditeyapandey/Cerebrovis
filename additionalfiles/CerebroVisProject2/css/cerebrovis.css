@@ -1,0 +1,251 @@
+
+/*body{*/
+
+/*}*/
+/*section {*/
+    /*display: flex;*/
+    /*flex-flow: column wrap;*/
+/*margin: 2%;*/
+    /*font-family: sans-serif;*/
+
+/*}*/
+/*h1, h2, h3, h4, h5, h6{*/
+    /*color: #CC0000;*/
+
+/*}*/
+
+/*.headerContainer {*/
+    /*font-size: 4rem;*/
+    /*text-align: center;*/
+    /*color: #CC0000;*/
+/*}*/
+/*.teaserImageContainer{*/
+    /*border: solid;*/
+    /*border-color: #615445;*/
+    /*margin-right: 30%;*/
+    /*margin-left: 30%;*/
+/*}*/
+
+/*.logo{*/
+    /*width: 60%;*/
+/*}*/
+
+/*.paperMaterial{*/
+    /*text-align: center;*/
+    /*color: #CC0000;*/
+/*}*/
+
+/*.flexibleSection > article{*/
+    /*margin-left: 1%;*/
+    /*margin-right: 1%;*/
+/*}*/
+
+/*.abstractContainer{*/
+    /*font-size: 10px;*/
+/*}*/
+
+body {
+    color: #333;
+    font-family: "sans-serif";
+    font-size: 14px;
+    font-weight: 200;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #CC0000;
+    text-align: center;
+}
+
+
+/* Search box */
+#search-box p {
+    color: #fff;
+    font-style: italic;
+    margin: 0 0 20px;
+}
+
+#search-box input[type=submit] {
+    display: none;
+}
+
+#search-box input[type=search] {
+    background: none;
+    border: none;
+    border-bottom: 2px solid #666;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+#search-box input[type=search]:focus {
+    border-bottom: 2px solid #fff;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+section { display: flex; margin: 1%; font-family: "sans-serif";  }
+
+a{
+    color:sienna;
+}
+a:hover{
+    color:black;
+}
+
+article p {
+    margin-left:1%;
+}
+article {
+    margin: 1rem;
+    -ms-flex: 1 0 0px;
+    flex: 1;
+    border-color: #e4e4e4;
+    margin:2px;
+}
+article.breaking {
+    -ms-flex-grow: 2;
+    flex: 2;
+    /* shortcut for "flex-grow: 2" */
+}
+
+article img {
+    width: 100%; height: auto;
+}
+
+.logo{
+    width: 40%;
+}
+
+.teaserImageContainer{
+border: solid;
+border-color: lightgrey;
+margin-right: 25%;
+margin-left: 25%;}
+
+@media screen and (max-width: 750px) {
+    body > h1 { font-size: 3rem; }
+    section {
+        -ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        flex-direction: column;
+    }
+}
+.mainHeaderSection article{
+    border: none;
+
+}
+
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+
+.sectionContent{
+    margin:2%;
+}
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    background: #f1f1f1f1;
+}
+.newsContainer{
+    margin:2%
+}
+.mySlideInactive{
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    float: right;
+    /*top: 90%;*/
+    /*width: auto;*/
+    /*margin-top: -30px;*/
+    /*padding: 16px;*/
+    /*color: #888;*/
+    /*font-weight: bold;*/
+    /*font-size: 20px;*/
+    /*border-radius: 0 3px 3px 0;*/
+    /*user-select: none;*/
+}
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 5px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.team > article{
+    border: solid;
+    border-color: lightgrey;
+
+}
+
+.team > article > div {
+margin:2%
+}
+
+.NortheasternLogo{
+    font-size: 14px;
+}
