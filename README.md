@@ -30,6 +30,18 @@ A step by step explanation of installing and running CerebroVis.
 
 listfiles.html contains all the brain scans.
 
+### Features
+
+The default view of CerebroVis shows the novel visualization and a 2D project of the cerebral arteries.
+
+<img width="1752" alt="Screen Shot 2021-05-12 at 2 28 34 PM" src="https://user-images.githubusercontent.com/8208255/118025995-56240200-b32e-11eb-9772-e758dcfe4e97.png">
+
+Click on any artery in the CerebroVis View to see the higlighted artery in the brain.
+
+<img width="1741" alt="Screen Shot 2021-05-12 at 2 29 51 PM" src="https://user-images.githubusercontent.com/8208255/118026159-84a1dd00-b32e-11eb-896b-308e27d4aeaf.png">
+
+
+
 ## Contributing
 
 To contribute please reach out to <aditeyapandey@gmail.com>.
